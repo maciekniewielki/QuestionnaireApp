@@ -5,6 +5,7 @@ export type QuestionTypes = "freeText" | "singleOption";
 
 export type BaseQuestionProps<Type extends QuestionTypes> = {
     type: Type;
+    name: string;
     question: string;
 }
 

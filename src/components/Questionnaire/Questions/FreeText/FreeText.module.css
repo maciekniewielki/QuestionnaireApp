@@ -1,0 +1,8 @@
+.freeText label {
+    display: block;
+}
+
+.freeText textarea {
+    width: 100%;
+    resize: none;
+}

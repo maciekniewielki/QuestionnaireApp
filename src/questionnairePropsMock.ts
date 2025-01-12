@@ -4,10 +4,19 @@ export const props: QuestionnaireProps = {
     headline: "Welcome to the developer questionaire. Please take a minute to answer our questions",
     questions: [
       {
+        name: "name",
         type: "freeText",
+        multiline: false,
+        question: "Tell us your name"
+      },
+      {
+        name: "pastExperience",
+        type: "freeText",
+        multiline: true,
         question: "Tell us something about your past experience"
       },
       {
+        name: "role",
         type: "singleOption",
         question: "Choose a role in which you feel most comfortable in",
         options: [
@@ -30,10 +39,13 @@ export const props: QuestionnaireProps = {
         ]
       },
       {
+        name: "hobbies",
         type: "freeText",
+        multiline: true,
         question: "Tell us something about your hobbies"
       },
       {
+        name: "workType",
         type: "singleOption",
         question: "Choose your favourite work type",
         options: [
