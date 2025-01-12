@@ -2,6 +2,7 @@ import styles from './Questionnaire.module.css'
 import { QuestionProps } from './Questions/types'
 import { FreeText } from './Questions/FreeText/FreeText';
 import { SingleOption } from './Questions/SingleOption/SingleOption';
+import { Submit } from './Submit/Submit';
 
 export type QuestionnaireProps = {
   headline: string;
@@ -13,8 +14,8 @@ export const Questionnaire = ({ headline, questions }: QuestionnaireProps) => {
     <div className={styles.questionnaire}>
       <h1>{headline}</h1>
       <form action='#' method='post'>
-        {/* TODO make the styles easier to use, maybe use camelCase for keys? */}
-        {questions.map(q => <div className={styles["question-wrapper"]}>{renderQuestion(q)}</div>)}
+        {questions.map(q => <div className={styles.questionWrapper}>{renderQuestion(q)}</div>)}
+        <Submit />
       </form>
     </div>
   )
