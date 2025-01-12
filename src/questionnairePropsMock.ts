@@ -2,6 +2,11 @@ import { QuestionnaireProps } from "./components/Questionnaire/Questionnaire";
 
 export const props: QuestionnaireProps = {
     headline: "Welcome to the developer questionaire. Please take a minute to answer our questions",
+    thankYouText: "Thank you for submitting the form",
+    labels: {
+      submit: "Submit"
+    },
+    submitEndpoint: "/questionnaire",
     questions: [
       {
         name: "name",

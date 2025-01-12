@@ -9,19 +9,26 @@ import { useState } from 'react';
 export type QuestionnaireProps = {
   headline: string;
   questions: QuestionProps[];
+  thankYouText: string;
+  submitEndpoint: string;
+  labels: QuestionnaireLabels;
 }
 
-export const Questionnaire = ({ headline, questions }: QuestionnaireProps) => {
+export type QuestionnaireLabels = {
+  submit: string;
+}
+
+export const Questionnaire = ({ headline, questions, thankYouText, labels }: QuestionnaireProps) => {
   const [submitted, setSubmitted] = useState(false);
 
   const renderForm = (questions: QuestionProps[]) => {
     return <form action='#' method='post' onSubmit={onFormSubmitted}>
-      {questions.map((q, index) =>
-        <div key={q.name} className={styles.questionWrapper}>
-          <QuestionText number={index + 1} text={q.question} />
-          {renderField(q)}
+      {questions.map((question, index) =>
+        <div key={question.name} className={styles.questionWrapper}>
+          <QuestionText number={index + 1} text={question.question} />
+          {renderField(question)}
         </div>)}
-      <Submit />
+      <Submit label={labels.submit}/>
     </form>
   }
 
@@ -37,7 +44,7 @@ export const Questionnaire = ({ headline, questions }: QuestionnaireProps) => {
   return (
     <div className={styles.questionnaire}>
       <h1 className={styles.headline}>{headline}</h1>
-      {submitted ? <h2>Thank you for submitting the form</h2> : renderForm(questions)}
+      {submitted ? <h2>{thankYouText}</h2> : renderForm(questions)}
     </div>
   )
 }
