@@ -5,10 +5,8 @@ export type FreeTextProps = {
     multiline: boolean;
 } & BaseQuestionProps<"freeText">
 
-export const FreeText = ({ multiline, name, question }: FreeTextProps) => {
+export const FreeText = ({ multiline, name }: FreeTextProps) => {
     return <div className={styles.freeText}>
-        <div>{question}</div>
         {multiline ? <textarea name={name} rows={10}/> : <input name={name}/>}
     </div>
-     
 }

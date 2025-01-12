@@ -11,9 +11,8 @@ export type SingleOptionProps = {
 } & BaseQuestionProps<"singleOption">
 
 
-export const SingleOption = ({ name, question, options }: SingleOptionProps) => {
+export const SingleOption = ({ name, options }: SingleOptionProps) => {
     return <>
-        <div>{question}</div>
         {options.map(option =>
             <label key={option.value} className={styles.radioLabel}>
                 <input type="radio" value={option.value} name={name} />
