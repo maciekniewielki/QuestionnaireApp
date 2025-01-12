@@ -1,6 +1,7 @@
 import { QuestionnaireProps } from "./components/Questionnaire/Questionnaire";
 
 export const props: QuestionnaireProps = {
+    headline: "Welcome to the developer questionaire. Please take a minute to answer our questions",
     questions: [
       {
         type: "freeText",
