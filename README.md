@@ -1,8 +1,11 @@
 # Questionnaire UI component in React+TS
 
-This repository contains a simple React component that can be used to create questionnaires. Supported question/answer types:
+This repository contains a simple React component that can be used to create questionnaires. Supported question types:
 - Free text
 - Single option
+
+# Requirements
+Node.js 18, 20, or 22+
 
 # Development
 ```bash
