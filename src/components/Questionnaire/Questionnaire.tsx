@@ -13,7 +13,7 @@ export type QuestionnaireProps = {
 export const Questionnaire = ({ headline, questions }: QuestionnaireProps) => {
   return (
     <div className={styles.questionnaire}>
-      <h1>{headline}</h1>
+      <h1 className={styles.headline}>{headline}</h1>
       <form action='#' method='post'>
         {questions.map((q, index) => 
         <div key={q.name} className={styles.questionWrapper}>
